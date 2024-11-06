@@ -17,7 +17,7 @@ def get_location_from_ip(ip_address):
 
 def get_weather_from_location(city, country_code):
   token = os.environ.get("OPEN_WEATHER_TOKEN")
-  url = "https://api.openweathermap.org/data/2.5/weather?q={},{}&units=metric&appid={}".format(
+  url = "https://api.openweathermap.org/data/2.5/weather?q={},{}&units=metric&appid={}/".format(
       city, country_code, token)
   response = requests.get(url)
   return response.json()
